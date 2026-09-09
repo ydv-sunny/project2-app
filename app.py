@@ -1,61 +1,20 @@
 from flask import Flask
-import socket
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
-    hostname = socket.gethostname()
-
-    return f"""
-    <!DOCTYPE html>
+    return """
     <html>
-    <head>
-        <title>Project 2 Application</title>
-        <style>
-            body {{
-                font-family: Arial, sans-serif;
-                background: #f4f6f8;
-                padding: 40px;
-            }}
-
-            .container {{
-                max-width: 700px;
-                margin: auto;
-                background: white;
-                padding: 30px;
-                border-radius: 12px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            }}
-
-            h1 {{
-                color: #222;
-            }}
-
-            .status {{
-                color: green;
-                font-weight: bold;
-            }}
-        </style>
-    </head>
-
-    <body>
-        <div class="container">
+        <head>
+            <title>Project 2 Web Application</title>
+        </head>
+        <body>
             <h1>Project 2 Web Application</h1>
-
-            <p>
-                Application Status:
-                <span class="status">RUNNING</span>
-            </p>
-
-            <p>EC2 Instance: {hostname}</p>
-
-            <p>Database Status: Connecting...</p>
-
-            <p>Visitor Count: Coming Soon</p>
-        </div>
-    </body>
+            <p>Application: UP</p>
+            <p>Database: Not connected yet</p>
+        </body>
     </html>
     """
 
